@@ -5,10 +5,13 @@ package CRUD_Java;
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
-/**
- *
- * @author André Olímpio
- */
+// Importação das classes necessárias para a aplicação
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import javax.swing.JOptionPane;
+
+/*  @author André Olímpio  */
+
 public class Tela_Login extends javax.swing.JFrame {
 
     /**
@@ -107,7 +110,44 @@ public class Tela_Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Btn_ValidarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_ValidarActionPerformed
-        new Tela_Principal().setVisible(true);
+        // Declaração de variáveis locais
+        String usuario = Txt_Login.getText();
+        String senha = Txt_Senha.getText();
+        String sql = "Select login, senha, status, nome, tipo from usuarios where login = ?";
+
+        // Instanciando a variável conexao
+        Conexao_BD conexao;
+
+        // Estrutura para conexão com banco de dados
+        try {
+            conexao = new Conexao_BD();
+            PreparedStatement valida_senha = conexao.getConexao().prepareStatement(sql);
+            valida_senha.setString(1, usuario);
+            ResultSet resultado = valida_senha.executeQuery();
+            // Armazenamento do retorno da instrução SELECT em um vetor
+            while (resultado.next()) {
+                String[] retorno = new String[5];
+                retorno[0] = resultado.getString("login");
+                retorno[1] = resultado.getString("senha");
+                retorno[2] = resultado.getString("nome");
+                retorno[3] = resultado.getString("status");
+                retorno[4] = resultado.getString("tipo");
+        
+                // Efetuando a validação de usuário / senha
+                if ((!usuario.equals(retorno[0])) || (!senha.equals(retorno[1]))) {
+                    JOptionPane.showMessageDialog(this,"Usuário e/ou senha inválidos!!! Por favor, digite novamente!!!");
+                }
+                else {
+                    dispose();
+                    new Tela_Principal().setVisible(true);
+                }
+            }
+        }
+
+        // Tratamento da exceção para erro de conexão com o banco de dados
+        catch(Exception excecao) {
+            JOptionPane.showMessageDialog(this,excecao.getMessage(),"ERRO",JOptionPane.ERROR_MESSAGE);
+        }  
     }//GEN-LAST:event_Btn_ValidarActionPerformed
 
     private void Btn_LimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_LimparActionPerformed

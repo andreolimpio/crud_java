@@ -1,13 +1,15 @@
+package CRUD_Java;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 
 /* @author André Olímpio */
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import javax.swing.JOptionPane;
 
 public class Conexao_BD {
     // Importação das classes necessárias para a aplicação
@@ -23,7 +25,6 @@ public class Conexao_BD {
         try {
             Class.forName(driver);
             conexao = DriverManager.getConnection(url, usuario, senha);
-            JOptionPane.showMessageDialog(null, "Conexão OK");
         }
         catch(ClassNotFoundException Driver) {
             throw new Exception("Driver não encontrado!!!");
