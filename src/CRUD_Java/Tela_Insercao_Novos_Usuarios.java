@@ -16,6 +16,7 @@ public class Tela_Insercao_Novos_Usuarios extends javax.swing.JFrame {
      */
     public Tela_Insercao_Novos_Usuarios() {
         initComponents();
+        Rb_Vazio.setVisible(false);
     }
 
     /**
@@ -27,79 +28,186 @@ public class Tela_Insercao_Novos_Usuarios extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        buttonGroup1 = new javax.swing.ButtonGroup();
-        jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jLabel3 = new javax.swing.JLabel();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        BtG_Grupo_Button = new javax.swing.ButtonGroup();
+        Pnl_Painel = new javax.swing.JPanel();
+        Lbl_Nome = new javax.swing.JLabel();
+        Txt_Nome = new javax.swing.JTextField();
+        Lbl_Username = new javax.swing.JLabel();
+        Lbl_Senha = new javax.swing.JLabel();
+        Txt_Username = new javax.swing.JTextField();
+        Txt_Senha = new javax.swing.JPasswordField();
+        Lbl_Tipo = new javax.swing.JLabel();
+        Rb_Usuario_Comum = new javax.swing.JRadioButton();
+        Rb_Administrador = new javax.swing.JRadioButton();
+        Lbl_Titulo = new javax.swing.JLabel();
+        Btn_Gravar = new javax.swing.JButton();
+        Btn_Fechar = new javax.swing.JButton();
+        Btn_Limpar = new javax.swing.JButton();
+        Rb_Vazio = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Username:");
+        Pnl_Painel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Pnl_Painel.setToolTipText("");
 
-        jLabel2.setText("Senha:");
+        Lbl_Nome.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        Lbl_Nome.setText("Nome:");
 
-        jPasswordField1.setText("jPasswordField1");
+        Txt_Nome.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
 
-        buttonGroup1.add(jRadioButton1);
-        jRadioButton1.setText("Usuário Comum");
+        Lbl_Username.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        Lbl_Username.setText("Username:");
 
-        jLabel3.setText("Tipo:");
+        Lbl_Senha.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        Lbl_Senha.setText("Senha:");
 
-        buttonGroup1.add(jRadioButton2);
-        jRadioButton2.setText("Administrador");
+        Txt_Username.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Usuário Comum", "Administrador" }));
+        Txt_Senha.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+
+        Lbl_Tipo.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        Lbl_Tipo.setText("Tipo:");
+
+        BtG_Grupo_Button.add(Rb_Usuario_Comum);
+        Rb_Usuario_Comum.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        Rb_Usuario_Comum.setText("Usuário Comum");
+
+        BtG_Grupo_Button.add(Rb_Administrador);
+        Rb_Administrador.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        Rb_Administrador.setText("Administrador");
+
+        Lbl_Titulo.setFont(new java.awt.Font("Calibri", 1, 22)); // NOI18N
+        Lbl_Titulo.setText("Cadastro de Novos Usuários");
+
+        Btn_Gravar.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        Btn_Gravar.setText("Gravar");
+
+        Btn_Fechar.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        Btn_Fechar.setText("Fechar");
+        Btn_Fechar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_FecharActionPerformed(evt);
+            }
+        });
+
+        Btn_Limpar.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        Btn_Limpar.setText("Limpar");
+        Btn_Limpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_LimparActionPerformed(evt);
+            }
+        });
+
+        BtG_Grupo_Button.add(Rb_Vazio);
+        Rb_Vazio.setText("Vazio");
+
+        javax.swing.GroupLayout Pnl_PainelLayout = new javax.swing.GroupLayout(Pnl_Painel);
+        Pnl_Painel.setLayout(Pnl_PainelLayout);
+        Pnl_PainelLayout.setHorizontalGroup(
+            Pnl_PainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Pnl_PainelLayout.createSequentialGroup()
+                .addGroup(Pnl_PainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Pnl_PainelLayout.createSequentialGroup()
+                        .addGap(60, 60, 60)
+                        .addGroup(Pnl_PainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Lbl_Username)
+                            .addComponent(Lbl_Senha)
+                            .addComponent(Lbl_Tipo)
+                            .addComponent(Lbl_Nome))
+                        .addGap(11, 11, 11)
+                        .addGroup(Pnl_PainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Pnl_PainelLayout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addGroup(Pnl_PainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Rb_Usuario_Comum)
+                                    .addComponent(Rb_Administrador)
+                                    .addComponent(Txt_Nome, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(Pnl_PainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                        .addComponent(Txt_Senha, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)
+                                        .addComponent(Txt_Username, javax.swing.GroupLayout.Alignment.LEADING))))
+                            .addGroup(Pnl_PainelLayout.createSequentialGroup()
+                                .addComponent(Btn_Limpar)
+                                .addGap(27, 27, 27)
+                                .addComponent(Btn_Fechar))))
+                    .addGroup(Pnl_PainelLayout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addComponent(Btn_Gravar)))
+                .addContainerGap(32, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pnl_PainelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(Pnl_PainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pnl_PainelLayout.createSequentialGroup()
+                        .addComponent(Lbl_Titulo)
+                        .addGap(66, 66, 66))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pnl_PainelLayout.createSequentialGroup()
+                        .addComponent(Rb_Vazio)
+                        .addContainerGap())))
+        );
+        Pnl_PainelLayout.setVerticalGroup(
+            Pnl_PainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Pnl_PainelLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(Lbl_Titulo)
+                .addGap(18, 18, 18)
+                .addGroup(Pnl_PainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Lbl_Nome)
+                    .addComponent(Txt_Nome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(Pnl_PainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Lbl_Username)
+                    .addComponent(Txt_Username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(Pnl_PainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Lbl_Senha)
+                    .addComponent(Txt_Senha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(Pnl_PainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Rb_Usuario_Comum)
+                    .addComponent(Lbl_Tipo))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(Pnl_PainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Rb_Administrador)
+                    .addComponent(Rb_Vazio))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addGroup(Pnl_PainelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Btn_Gravar)
+                    .addComponent(Btn_Fechar)
+                    .addComponent(Btn_Limpar))
+                .addGap(39, 39, 39))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
-                .addGap(42, 42, 42)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButton2)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jRadioButton1)
-                        .addGap(47, 47, 47)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jPasswordField1)
-                        .addComponent(jTextField1)))
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(Pnl_Painel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(7, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jLabel3)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jRadioButton2)
-                .addContainerGap(187, Short.MAX_VALUE))
+                .addComponent(Pnl_Painel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void Btn_LimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_LimparActionPerformed
+        Txt_Nome.setText("");
+        Txt_Username.setText("");
+        Txt_Senha.setText("");
+        Txt_Nome.requestFocus(true);
+        Rb_Vazio.setSelected(true);
+    }//GEN-LAST:event_Btn_LimparActionPerformed
+
+    private void Btn_FecharActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_FecharActionPerformed
+        dispose();
+        new Tela_Principal().setVisible(true);
+    }//GEN-LAST:event_Btn_FecharActionPerformed
 
     /**
      * @param args the command line arguments
@@ -137,14 +245,21 @@ public class Tela_Insercao_Novos_Usuarios extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.ButtonGroup BtG_Grupo_Button;
+    private javax.swing.JButton Btn_Fechar;
+    private javax.swing.JButton Btn_Gravar;
+    private javax.swing.JButton Btn_Limpar;
+    private javax.swing.JLabel Lbl_Nome;
+    private javax.swing.JLabel Lbl_Senha;
+    private javax.swing.JLabel Lbl_Tipo;
+    private javax.swing.JLabel Lbl_Titulo;
+    private javax.swing.JLabel Lbl_Username;
+    private javax.swing.JPanel Pnl_Painel;
+    private javax.swing.JRadioButton Rb_Administrador;
+    private javax.swing.JRadioButton Rb_Usuario_Comum;
+    private javax.swing.JRadioButton Rb_Vazio;
+    private javax.swing.JTextField Txt_Nome;
+    private javax.swing.JPasswordField Txt_Senha;
+    private javax.swing.JTextField Txt_Username;
     // End of variables declaration//GEN-END:variables
 }
