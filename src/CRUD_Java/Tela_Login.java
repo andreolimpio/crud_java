@@ -145,6 +145,7 @@ public class Tela_Login extends javax.swing.JFrame {
             PreparedStatement valida_senha = conexao.getConexao().prepareStatement(sql);
             valida_senha.setString(1, usuario);
             ResultSet resultado = valida_senha.executeQuery();
+            
             // Armazenamento do retorno da instrução SELECT em um vetor
             while (resultado.next()) {
                 String[] retorno = new String[5];
@@ -159,8 +160,13 @@ public class Tela_Login extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(this,"Usuário e/ou senha inválidos!!! Por favor, digite novamente!!!");
                 }
                 else {
-                    dispose();
-                    new Tela_Principal().setVisible(true);
+                    if (retorno[3].equals("B")){
+                        JOptionPane.showMessageDialog(this,"Usuário Bloqueado!!! Favor, entrar em contato com o administrador!!!");
+                    }
+                    else{
+                        dispose();
+                        new Tela_Principal().setVisible(true);
+                    }
                 }
             }
         }

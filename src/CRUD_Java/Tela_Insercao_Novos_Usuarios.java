@@ -5,15 +5,11 @@ package CRUD_Java;
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
-/**
- *
- * @author André Olímpio
- */
+/* @author André Olímpio */
+
 public class Tela_Insercao_Novos_Usuarios extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Tela_Insercao_Novos_Usuarios
-     */
+    /* Creates new form Tela_Insercao_Novos_Usuarios */
     public Tela_Insercao_Novos_Usuarios() {
         initComponents();
         Rb_Vazio.setVisible(false);
@@ -212,6 +208,7 @@ public class Tela_Insercao_Novos_Usuarios extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
