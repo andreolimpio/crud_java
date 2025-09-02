@@ -13,10 +13,10 @@ import javax.swing.JOptionPane;
 /*  @author André Olímpio  */
 
 public class Tela_Login extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Tela_Login
-     */
+    // Variáveis globais 
+    int cont_acesso = 0;
+    
+     /* Creates new form Tela_Login */
     public Tela_Login() {
         initComponents();
     }
@@ -135,6 +135,7 @@ public class Tela_Login extends javax.swing.JFrame {
         String usuario = Txt_Login.getText();
         String senha = Txt_Senha.getText();
         String sql = "Select login, senha, status, nome, tipo from usuarios where login = ?";
+        String sql1 = "Update usuarios set status = 'B' where login = ?";
 
         // Instanciando a variável conexao
         Conexao_BD conexao;
@@ -158,6 +159,7 @@ public class Tela_Login extends javax.swing.JFrame {
                 // Efetuando a validação de usuário / senha
                 if ((!usuario.equals(retorno[0])) || (!senha.equals(retorno[1]))) {
                     JOptionPane.showMessageDialog(this,"Usuário e/ou senha inválidos!!! Por favor, digite novamente!!!");
+                    cont_acesso++;
                 }
                 else {
                     if (retorno[3].equals("B")){
